@@ -275,7 +275,7 @@ export default function ImplantPricingPage() {
                     <div className="text-sm text-primary-200">Years Warranty</div>
                   </div>
                   <div>
-                    <div className="text-3xl font-bold text-accent-300">1000+</div>
+                    <div className="text-3xl font-bold text-accent-300">900+</div>
                     <div className="text-sm text-primary-200">Implants Placed</div>
                   </div>
                 </div>
