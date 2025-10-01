@@ -12,32 +12,32 @@ import {
   CheckCircle,
   ShieldCheck,
   Phone,
-  Plane,
   Star,
-  UserCheck
+  UserCheck,
+  Plane
 } from "lucide-react"
 import { useState } from "react"
 
 const steps = [
   {
     number: "01",
-    title: "Free Consultation",
-    timeline: "WITHIN 24H",
-    description: "A dedicated Premium Dental advisor contacts you to understand your dental needs and goals.",
-    subStep: "WITHIN 7 DAYS",
-    subDescription: "Receive your personalized treatment plan with detailed quote and savings calculation.",
+    title: "Consultation Gratuite",
+    timeline: "SOUS 24H",
+    description: "Un conseiller Clinique Saada dédié vous contacte pour comprendre vos besoins dentaires.",
+    subStep: "SOUS 7 JOURS",
+    subDescription: "Recevez votre plan de traitement personnalisé avec devis détaillé.",
     icon: MessageCircle,
     color: "from-blue-400 to-blue-600",
     benefits: [
-      "Free video consultation",
-      "Personalized treatment plan",
-      "Multiple treatment options",
-      "Transparent pricing"
+      "Consultation vidéo gratuite",
+      "Plan de traitement personnalisé",
+      "Plusieurs options de traitement",
+      "Tarification transparente"
     ]
   },
   {
     number: "02", 
-    title: "Travel Planning",
+    title: "Planification de Voyage",
     timeline: "CONCIERGE SERVICE",
     description: "We organize your entire journey including transportation, premium accommodation, and all medical appointments.",
     subStep: "VIP SUPPORT",

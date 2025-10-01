@@ -19,32 +19,21 @@ import {
 } from 'lucide-react';
 
 export default function FooterSection() {
-  const [year, setYear] = useState<string | null>(null);
-  useEffect(() => {
-    setYear(new Date().getFullYear().toString());
-  }, []);
 
   return (
-    <footer className="bg-gradient-to-b from-[#0b3a6b] via-[#0f4cac] to-[#1e3aa8] text-white relative overflow-hidden">
-      {/* Decorative background elements */}
-      <div className="absolute inset-0 opacity-12 pointer-events-none">
-        <div className="absolute top-10 left-10 w-32 h-32 rounded-full bg-[#60a5fa] blur-3xl"></div>
-        <div className="absolute bottom-10 right-10 w-40 h-40 rounded-full bg-[#1e40af] blur-3xl"></div>
-      </div>
-
-      <div className="container mx-auto px-4 py-16 relative z-10">
+    <footer className="bg-gray-900 text-white relative">
+      <div className="container mx-auto px-4 py-16">
         <div className="grid md:grid-cols-4 gap-12">
-          {/* Company Info */}
           <div className="md:col-span-2">
-            <h2 className="font-playfair font-bold text-2xl mb-4 text-white">Premium Dental</h2>
-            <p className="text-slate-100 mb-6">
-              The luxury approach to affordable dental care abroad. UK-based patient coordination with premium clinics across Europe.
+            <h2 className="font-bold text-2xl mb-4 text-white">Clinique Dentaire Saada</h2>
+            <p className="text-gray-300 mb-6 leading-relaxed">
+              Votre partenaire de confiance pour des soins dentaires d'excellence. 
+              Une équipe passionnée et des technologies de pointe au service de votre sourire.
             </p>
 
             {/* Clinic image + Testimonial section */}
             <div className="mt-6 flex items-start gap-6">
               <img
-                src="https://images.unsplash.com/photo-1588776814546-1f8b5e3d9b4f?auto=format&fit=crop&w=600&q=60"
                 alt="Luxury dental clinic"
                 className="w-36 h-24 object-cover rounded-lg shadow-lg"
                 loading="lazy"
@@ -78,19 +67,19 @@ export default function FooterSection() {
             <h3 className="font-semibold text-lg mb-6 text-white">Contact & Social</h3>
             <div className="space-y-4 mb-6">
               <div className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-[#a5f3fc] mt-0.5" />
+                <MapPin className="w-5 h-5 text-teal-400 mt-0.5" />
                 <div>
-                  <p className="text-white">125 London Wall</p>
-                  <p className="text-slate-200">London, EC2Y 5AS, UK</p>
+                  <p className="text-white">Immeuble Saada</p>
+                  <p className="text-gray-300">Av. Hassan II, Rabat 10000</p>
                 </div>
               </div>
               <div className="flex items-center gap-3">
-                <Phone className="w-5 h-5 text-[#a5f3fc]" />
-                <p className="text-white">+44 20 1234 5678</p>
+                <Phone className="w-5 h-5 text-teal-400" />
+                <p className="text-white">06 61 25 01 37</p>
               </div>
               <div className="flex items-center gap-3">
-                <Mail className="w-5 h-5 text-[#a5f3fc]" />
-                <p className="text-white">care@premiumdental.com</p>
+                <Phone className="w-5 h-5 text-teal-400" />
+                <p className="text-white">Fix: 0530395115</p>
               </div>
             </div>
 
@@ -156,7 +145,7 @@ export default function FooterSection() {
 
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-slate-100 text-sm">© {year ?? new Date().getFullYear()} Premium Dental. All rights reserved.</p>
+          <p className="text-slate-100 text-sm">© {new Date().getFullYear()} Clinique Dentaire Saada. Tous droits réservés.</p>
           <div className="flex gap-4 text-slate-100 text-sm mt-4 md:mt-0">
             <Link href="/privacy" className="hover:text-[#a5f3fc] transition-colors">Privacy Policy</Link>
             <Link href="/terms" className="hover:text-[#a5f3fc] transition-colors">Terms of Service</Link>

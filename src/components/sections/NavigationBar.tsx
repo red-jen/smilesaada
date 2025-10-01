@@ -17,34 +17,21 @@ import {
 } from "lucide-react"
 
 const navigationLinks = [
-  { name: "Home", href: "/" },
-  { name: "About", href: "/about" },
-  { name: "Services", href: "/services" },
-  { name: "Pricing", href: "/pricing" },
-  { name: "FAQ", href: "/faq" },
+  { name: "Accueil", href: "/" },
+  { name: "À Propos", href: "/about" },
   { 
-    name: "Treatments", 
-    href: "/services", 
+    name: "Nos Soins", 
+    href: "/#services", 
     submenu: [
-      { name: "Dental Implants", href: "/treatments/implants" },
-      { name: "Veneers", href: "/treatments/veneers" },
-      { name: "Crowns & Bridges", href: "/treatments/crowns" },
-      { name: "Full Mouth Rehabilitation", href: "/treatments/full-mouth" },
-      { name: "Cosmetic Dentistry", href: "/treatments/cosmetic" },
+      { name: "Implants Dentaires", href: "/services/implants" },
+      { name: "Facettes Dentaires", href: "/services/facettes" },
+      { name: "Couronnes", href: "/services/couronnes" },
+      { name: "Orthodontie", href: "/services/orthodontie" },
+      { name: "Blanchiment", href: "/services/blanchiment" },
     ]
   },
-  { 
-    name: "Destinations", 
-    href: "/#clinics",
-    submenu: [
-      { name: "Spain", href: "/destinations/spain" },
-      { name: "Hungary", href: "/destinations/hungary" },
-      { name: "Portugal", href: "/destinations/portugal" },
-      { name: "Croatia", href: "/destinations/croatia" },
-      { name: "Turkey", href: "/destinations/turkey" },
-    ]
-  },
-  { name: "Testimonials", href: "/#testimonials" },
+  { name: "Tarifs", href: "/pricing" },
+  { name: "Témoignages", href: "/#testimonials" },
   { name: "Contact", href: "/contact" },
 ]
 
