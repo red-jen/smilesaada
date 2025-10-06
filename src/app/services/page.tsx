@@ -294,7 +294,7 @@ export default function ServicesPage() {
                 interactive={true}
                 type="before-after"
                 badge="Amazing Results"
-                src="https://cdn.pixabay.com/photo/2017/08/06/09/50/people-2590551_1280.jpg"
+                src="/images/IMG-20251003-WA0011.jpg"
                 alt="Beautiful smile transformation after dental treatment"
                 fallback={
                   <div className="text-center text-white p-8">
@@ -528,7 +528,7 @@ export default function ServicesPage() {
                       width={60}
                       height={60}
                       className="rounded-2xl"
-                      src="https://cdn.pixabay.com/photo/2017/07/23/10/44/dentist-2530990_1280.jpg"
+                      src="/images/IMG-20251003-WA0012.jpg"
                       alt="Professional dental specialist"
                       fallback={
                         <div className="bg-gradient-to-br from-primary-600 to-accent-600 text-white flex items-center justify-center rounded-2xl font-bold text-xl">

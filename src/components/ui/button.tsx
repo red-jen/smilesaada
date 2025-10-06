@@ -12,10 +12,10 @@ const buttonVariants = cva(
         destructive:
           "bg-red-500 text-white hover:bg-red-600 shadow-sm",
         outline:
-          "border border-primary-200 bg-transparent hover:bg-primary-50 hover:text-primary-900",
+          "border border-primary-200 bg-transparent text-primary-900 hover:bg-primary-50 hover:text-primary-900",
         secondary:
           "bg-accent-100 text-accent-900 hover:bg-accent-200 shadow-sm",
-        ghost: "hover:bg-primary-100 hover:text-primary-900",
+        ghost: "text-primary-900 hover:bg-primary-100 hover:text-primary-900",
         link: "text-primary-700 underline-offset-4 hover:underline",
         premium: "bg-gradient-to-r from-primary-800 to-primary-600 text-white hover:from-primary-700 hover:to-primary-500 shadow-xl font-semibold",
         gold: "bg-gradient-to-r from-accent-600 to-accent-500 text-white hover:from-accent-500 hover:to-accent-400 shadow-lg font-semibold"

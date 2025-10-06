@@ -440,7 +440,7 @@ export default function FAQPage() {
                       width={120}
                       height={120}
                       className="rounded-2xl"
-                      src="https://cdn.pixabay.com/photo/2017/08/06/00/26/people-2586888_1280.jpg"
+                      src="/images/IMG-20251003-WA0014.jpg"
                       alt="Expert dental team"
                       fallback={
                         <div className="bg-gradient-to-br from-primary-600 to-accent-600 text-white flex items-center justify-center rounded-2xl">

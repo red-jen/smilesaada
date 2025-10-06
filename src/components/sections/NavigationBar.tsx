@@ -13,25 +13,29 @@ import {
   Globe,
   MapPin,
   Clock,
-  User
+  User,
+  ArrowRight
 } from "lucide-react"
 
 const navigationLinks = [
-  { name: "Accueil", href: "/" },
-  { name: "À Propos", href: "/about" },
+  { name: "Home", href: "/" },
+  { name: "About", href: "/about" },
   { 
-    name: "Nos Soins", 
+    name: "Dental Services", 
     href: "/#services", 
     submenu: [
-      { name: "Implants Dentaires", href: "/services/implants" },
-      { name: "Facettes Dentaires", href: "/services/facettes" },
-      { name: "Couronnes", href: "/services/couronnes" },
-      { name: "Orthodontie", href: "/services/orthodontie" },
-      { name: "Blanchiment", href: "/services/blanchiment" },
+      { name: "Dental Implants", href: "/services/implants", description: "Implant solutions to replace missing teeth" },
+      { name: "Dental Crowns", href: "/services/crowns", description: "Complete restoration of damaged teeth" },
+      { name: "Dental Bridges", href: "/services/bridges", description: "Replacement of several adjacent teeth" },
+      { name: "Fixed Denture on Implant", href: "/services/denture-implant", description: "Fixed and durable solution on implants" },
+      { name: "Teeth Whitening", href: "/services/whitening", description: "Get a bright and radiant smile" },
+      { name: "Dental Veneers", href: "/services/veneers", description: "Perfect the aesthetics of your teeth" },
+      { name: "Smile Transformations", href: "/services/transformations", description: "Discover our smile transformations" },
+      { name: "Orthodontics", href: "/services/orthodontics", description: "Dental alignment and correction" },
     ]
   },
-  { name: "Tarifs", href: "/pricing" },
-  { name: "Témoignages", href: "/#testimonials" },
+  { name: "Pricing", href: "/pricing" },
+  { name: "Testimonials", href: "/#testimonials" },
   { name: "Contact", href: "/contact" },
 ]
 
@@ -39,6 +43,7 @@ export default function NavigationBar() {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [activeSubmenu, setActiveSubmenu] = useState<number | null>(null)
+  const [hoveredService, setHoveredService] = useState<number | null>(null)
   const [openMobileSubmenu, setOpenMobileSubmenu] = useState<number | null>(null)
   const [activeSection, setActiveSection] = useState("home")
   
@@ -97,19 +102,107 @@ export default function NavigationBar() {
                 <li key={link.name} className="relative" onMouseEnter={() => handleSubmenuToggle(link.submenu ? index : null)} onMouseLeave={() => handleSubmenuToggle(null)}>
                   <Link
                     href={link.href}
-                    className={`text-sm font-medium transition-colors ${scrolled ? 'text-white/90 hover:text-amber-300' : (activeSection === link.href.replace('/#','').replace('#','') ? 'text-white' : 'text-white/90 hover:text-amber-300')}`}>
+                    className={`flex items-center gap-1 text-sm font-medium transition-colors ${scrolled ? 'text-white/90 hover:text-amber-300' : (activeSection === link.href.replace('/#','').replace('#','') ? 'text-white' : 'text-white/90 hover:text-amber-300')}`}>
                     {link.name}
+                    {link.submenu && (
+                      <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${activeSubmenu === index ? 'rotate-180' : ''}`} />
+                    )}
                   </Link>
 
-                  {link.submenu && activeSubmenu === index && (
-                    <div className="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-lg border border-slate-200 overflow-hidden z-50">
-                      <div className="py-2">
-                        {link.submenu.map((sublink) => (
-                          <Link key={sublink.name} href={sublink.href} className="block px-4 py-2 text-primary-700 hover:bg-slate-50" onClick={() => setIsOpen(false)}>{sublink.name}</Link>
-                        ))}
+                  <AnimatePresence>
+                    {link.submenu && activeSubmenu === index && (
+                      <motion.div 
+                        initial={{ opacity: 0, y: -10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -10 }}
+                        transition={{ duration: 0.2 }}
+                        className="fixed top-full left-0 right-0 w-full bg-white shadow-xl border-t border-gray-100 z-50"
+                      >
+                      <div className="max-w-7xl mx-auto px-6 py-8">
+                        <div className="flex gap-12">
+                          {/* Left Side - Service Links */}
+                          <div className="flex-1">
+                            <div className="mb-6">
+                              <h3 className="text-xl font-bold text-gray-900 mb-2">Our Dental Treatments</h3>
+                              <p className="text-gray-600 text-sm">From general dentistry to implantology, including periodontics and cosmetic dentistry.</p>
+                            </div>
+                            
+                            <div className="grid grid-cols-2 gap-2">
+                              {link.submenu.map((sublink, subIndex) => (
+                                <Link
+                                  key={sublink.name}
+                                  href={sublink.href}
+                                  className="group flex items-center justify-between p-3 rounded-lg hover:bg-gray-50 transition-all duration-200"
+                                  onMouseEnter={() => setHoveredService(subIndex)}
+                                  onMouseLeave={() => setHoveredService(null)}
+                                  onClick={() => setIsOpen(false)}
+                                >
+                                  <span className="text-sm font-medium text-gray-800 group-hover:text-teal-600">
+                                    {sublink.name}
+                                  </span>
+                                  <ArrowRight className="w-4 h-4 text-gray-400 group-hover:text-teal-600 transition-colors" />
+                                </Link>
+                              ))}
+                            </div>
+                            
+                            <div className="mt-6">
+                              <Link 
+                                href="/#services" 
+                                className="inline-flex items-center gap-2 text-teal-600 font-medium hover:text-teal-700 transition-colors"
+                                onClick={() => setIsOpen(false)}
+                              >
+                                <ArrowRight className="w-4 h-4" />
+                                Découvrir nos types de soins
+                              </Link>
+                            </div>
+                          </div>
+                          
+                          {/* Right Side - Details Panel */}
+                          <div className="w-96">
+                            <div className="bg-gradient-to-br from-teal-50 to-cyan-50 rounded-xl p-6 h-full min-h-[300px]">
+                              {hoveredService !== null && link.submenu[hoveredService] ? (
+                                <div>
+                                  <h4 className="text-xl font-bold text-gray-900 mb-4">
+                                    {link.submenu[hoveredService].name}
+                                  </h4>
+                                  <p className="text-gray-700 mb-6 leading-relaxed">
+                                    {link.submenu[hoveredService].description}
+                                  </p>
+                                  <div className="space-y-3">
+                                    <div className="flex items-start gap-3">
+                                      <div className="w-2 h-2 bg-teal-500 rounded-full mt-2 flex-shrink-0"></div>
+                                      <p className="text-gray-600 text-sm">Consultation et diagnostic personnalisé</p>
+                                    </div>
+                                    <div className="flex items-start gap-3">
+                                      <div className="w-2 h-2 bg-teal-500 rounded-full mt-2 flex-shrink-0"></div>
+                                      <p className="text-gray-600 text-sm">Technologies de pointe et matériaux de qualité</p>
+                                    </div>
+                                    <div className="flex items-start gap-3">
+                                      <div className="w-2 h-2 bg-teal-500 rounded-full mt-2 flex-shrink-0"></div>
+                                      <p className="text-gray-600 text-sm">Suivi post-traitement inclus</p>
+                                    </div>
+                                  </div>
+                                </div>
+                              ) : (
+                                <div className="flex flex-col justify-center h-full text-center">
+                                  <div className="mb-4">
+                                    <div className="w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                                      <User className="w-6 h-6 text-teal-600" />
+                                    </div>
+                                    <h4 className="text-lg font-semibold text-gray-900 mb-2">Have a Question?</h4>
+                                    <p className="text-gray-600 text-sm">
+                                      Our advisors are here to listen and guide you in achieving your dental project.
+                                    </p>
+                                  </div>
+                                </div>
+                              )}
+                            </div>
+                          </div>
+                        </div>
                       </div>
-                    </div>
-                  )}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
                 </li>
               ))}
             </ul>
@@ -146,17 +239,35 @@ export default function NavigationBar() {
                       <Link href={link.href} className="block py-3 text-white" onClick={() => setIsOpen(false)}>{link.name}</Link>
                     ) : (
                       <div>
-                        <button onClick={() => handleMobileSubmenuToggle(index)} className="w-full text-left py-3 flex items-center justify-between text-primary-800">
+                        <button onClick={() => handleMobileSubmenuToggle(index)} className="w-full text-left py-3 flex items-center justify-between text-white">
                           <span>{link.name}</span>
                           <ChevronDown className={`w-5 h-5 transition-transform ${openMobileSubmenu === index ? 'rotate-180' : ''}`} />
                         </button>
-                        {openMobileSubmenu === index && (
-                          <div className="pl-4 pb-2">
+                        <AnimatePresence>
+                          {openMobileSubmenu === index && (
+                            <motion.div 
+                              initial={{ opacity: 0, height: 0 }}
+                              animate={{ opacity: 1, height: 'auto' }}
+                              exit={{ opacity: 0, height: 0 }}
+                              transition={{ duration: 0.2 }}
+                              className="pl-4 pb-2 space-y-2 overflow-hidden"
+                            >
                             {link.submenu.map((sublink) => (
-                              <Link key={sublink.name} href={sublink.href} className="block py-2 text-white/90" onClick={() => setIsOpen(false)}>{sublink.name}</Link>
+                              <Link 
+                                key={sublink.name} 
+                                href={sublink.href} 
+                                className="block py-2 text-white/90 hover:text-white transition-colors" 
+                                onClick={() => setIsOpen(false)}
+                              >
+                                <div className="font-medium">{sublink.name}</div>
+                                {sublink.description && (
+                                  <div className="text-xs text-white/60 mt-1">{sublink.description}</div>
+                                )}
+                              </Link>
                             ))}
-                          </div>
-                        )}
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
                       </div>
                     )}
                   </div>

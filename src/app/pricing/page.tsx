@@ -306,7 +306,7 @@ export default function ImplantPricingPage() {
                 interactive={true}
                 type="before-after"
                 badge="Before & After"
-                src="https://cdn.pixabay.com/photo/2015/01/11/07/42/dentist-596751_1280.jpg"
+                src="/images/IMG-20251003-WA0013.jpg"
                 alt="Perfect smile dental treatment results"
                 fallback={
                   <div className="text-center text-white p-8">

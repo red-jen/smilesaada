@@ -15,37 +15,39 @@ import {
 
 const services = [
   {
-    title: "Soins Dentaires",
+    title: "Dental Care",
     description:
-      "Des soins dentaires modernes, sûrs et personnalisés qui préservent votre sourire jour après jour.",
+      "Modern, safe, and personalized dental care that preserves your smile every day with the latest technology.",
     icon: Stethoscope
   },
   {
-    title: "Chirurgie Orale",
+    title: "Oral Surgery",
     description:
-      "Une expertise chirurgicale de pointe pour répondre à vos besoins complexes en toute confiance.",
+      "Advanced surgical expertise to address your complex needs with confidence and precision.",
     icon: Shield
   },
   {
-    title: "Dental Implant",
+    title: "Dental Implants",
     description:
-      "Des implants fiables et esthétiques pour retrouver une mastication confortable et un sourire naturel.",
+      "Reliable and aesthetic implants to restore comfortable chewing and a natural smile.",
     icon: CheckCircle
   },
   {
-    title: "Entretien des Couronnes",
+    title: "Crown Maintenance",
     description:
-      "Un entretien rigoureux de vos restaurations pour garantir longévité et bien-être bucco-dentaire.",
+      "Rigorous maintenance of your restorations to guarantee longevity and optimal oral health.",
     icon: Heart
   }
 ]
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 via-white to-slate-50">
+    <div className="min-h-screen bg-gradient-to-b from-slate-50 via-white to-blue-50 relative">
+      <div className="absolute inset-0 bg-[url('/patterns/dots-light.svg')] bg-repeat opacity-5 pointer-events-none" />
       {/* Hero Section */}
       <section className="section-spacing bg-gradient-to-br from-primary-900 via-primary-800 to-blue-900 text-white relative overflow-hidden">
-        <div className="absolute inset-0 gradient-mesh opacity-30" />
+        <div className="absolute inset-0 gradient-mesh opacity-40" />
+        <div className="absolute inset-0 bg-[url('/patterns/dots-light.svg')] bg-repeat opacity-10" />
 
         <div className="container mx-auto px-4 relative">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -60,29 +62,29 @@ export default function AboutPage() {
                   <div className="w-12 h-12 bg-accent-500 rounded-2xl flex items-center justify-center">
                     <Heart className="w-7 h-7 text-white" />
                   </div>
-                  <span className="text-accent-300 font-semibold text-lg">À propos de nous • About Us</span>
+                  <span className="text-accent-300 font-semibold text-lg">About Us</span>
                 </div>
 
                 <h1 className="text-5xl lg:text-6xl font-playfair font-bold leading-tight blog-heading">
-                  À propos de la Clinique Dentaire Saada
+                  About Saada Dental Clinic
                 </h1>
 
                 <p className="text-xl text-primary-100 blog-content leading-relaxed">
-                  Bienvenue à la Clinique Dentaire Saada, un espace dédié à votre sourire et à votre bien-être.
-                  Située au cœur de votre ville, notre clinique vous propose des soins dentaires modernes, sûrs et
-                  personnalisés dans un cadre confortable et rassurant.
+                  Welcome to Saada Dental Clinic, a space dedicated to your smile and well-being.
+                  Located in the heart of the city, our clinic offers modern, safe, and
+                  personalized dental care in a comfortable and reassuring environment.
                 </p>
 
                 <p className="text-lg text-primary-100/80 blog-content leading-relaxed">
-                  Notre équipe de professionnels passionnés met son expertise au service de votre santé bucco-dentaire.
-                  De la prévention aux traitements spécialisés — orthodontie, chirurgie orale, implants, soins
-                  esthétiques ou blanchiment — nous vous accompagnons avec écoute, transparence et bienveillance.
+                  Our team of passionate professionals puts their expertise at the service of your oral health.
+                  From prevention to specialized treatments — orthodontics, oral surgery, implants, cosmetic
+                  care, or whitening — we support you with attentiveness, transparency, and care.
                 </p>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button variant="gold" size="xl" className="group">
-                  Découvrir notre clinique
+                  Discover Our Clinic
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
                 <Button
@@ -90,7 +92,7 @@ export default function AboutPage() {
                   size="xl"
                   className="bg-white/10 border-white/30 text-white hover:bg-white/20"
                 >
-                  Contacter un expert
+                  Contact an Expert
                   <Phone className="w-5 h-5" />
                 </Button>
               </div>
@@ -107,14 +109,14 @@ export default function AboutPage() {
                 className="rounded-3xl shadow-2xl"
                 overlay="gradient"
                 interactive
-                badge="Clinique Saada"
-                src="https://cdn.pixabay.com/photo/2017/07/23/10/44/dentist-2530990_1280.jpg"
-                alt="Clinique Dentaire Saada"
+                badge="Saada Clinic"
+                src="/images/IMG-20251003-WA0010.jpg"
+                alt="Saada Dental Clinic"
                 fallback={
                   <div className="text-center text-white p-8">
                     <Stethoscope className="w-16 h-16 mx-auto mb-4 text-accent-400" />
-                    <p className="text-xl font-bold mb-2">Clinique Dentaire Saada</p>
-                    <p className="text-primary-200">Votre sourire, notre priorité</p>
+                    <p className="text-xl font-bold mb-2">Saada Dental Clinic</p>
+                    <p className="text-primary-200">Your smile, our priority</p>
                   </div>
                 }
               />
@@ -122,8 +124,8 @@ export default function AboutPage() {
               <div className="absolute -top-6 -right-6 bg-gradient-to-br from-emerald-500 to-green-600 text-white rounded-2xl p-4 shadow-2xl">
                 <div className="text-center">
                   <CheckCircle className="w-8 h-8 mx-auto mb-2" />
-                  <div className="text-lg font-bold">Soin personnalisé</div>
-                  <div className="text-sm opacity-90">Chaque sourire compte</div>
+                  <div className="text-lg font-bold">Personalized Care</div>
+                  <div className="text-sm opacity-90">Every smile matters</div>
                 </div>
               </div>
             </motion.div>
@@ -132,7 +134,8 @@ export default function AboutPage() {
       </section>
 
       {/* Founder & Philosophy */}
-      <section className="section-spacing bg-white">
+      <section className="section-spacing bg-white relative">
+        <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-blue-50/30 to-blue-100/20" />
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             <motion.div
@@ -143,16 +146,15 @@ export default function AboutPage() {
               className="space-y-6"
             >
               <h2 className="text-4xl font-playfair font-bold text-primary-900 blog-heading">
-                Notre priorité : vous offrir des soins de qualité
+                Our Priority: Delivering Quality Care
               </h2>
               <p className="text-lg text-gray-600 blog-content leading-relaxed">
-                Notre priorité : vous offrir des soins de qualité avec des technologies de pointe tout en instaurant
-                une relation de confiance durable. À la Clinique Dentaire Saada, chaque sourire compte… surtout le
-                vôtre.
+                Our priority is to provide you with quality care using cutting-edge technology while establishing
+                a lasting relationship of trust. At Saada Dental Clinic, every smile matters... especially yours.
               </p>
               <p className="text-lg text-gray-600 blog-content leading-relaxed">
-                Nous créons des expériences chaleureuses et rassurantes pour que votre parcours de soins soit simple,
-                transparent et parfaitement adapté à vos attentes.
+                We create warm and reassuring experiences so that your care journey is simple,
+                transparent, and perfectly tailored to your expectations.
               </p>
             </motion.div>
 
@@ -174,8 +176,8 @@ export default function AboutPage() {
                     </div>
                   </div>
                   <p className="text-gray-600 blog-content leading-relaxed">
-                    « Nous croyons qu’un sourire épanoui change une vie. Notre mission est d’offrir des soins dentaires
-                    accessibles, humains et d’excellence, portés par une équipe passionnée et attentive. »
+                    "We believe that a radiant smile changes a life. Our mission is to offer accessible, human,
+                    and excellent dental care, driven by a passionate and attentive team."
                   </p>
                 </CardContent>
               </Card>
@@ -185,24 +187,24 @@ export default function AboutPage() {
       </section>
 
       {/* Services */}
-      <section className="section-spacing bg-gradient-to-br from-slate-50 to-white">
+      <section className="section-spacing bg-gradient-to-br from-slate-50 via-white to-blue-50 relative overflow-hidden">
+        <div className="absolute inset-0 gradient-mesh opacity-20" />
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
             className="text-center mb-16"
           >
             <h2 className="text-5xl font-playfair font-bold text-primary-900 mb-6 blog-heading">
-              Advance Services
+              Advanced Services
               <span className="bg-gradient-to-r from-accent-600 to-orange-500 bg-clip-text text-transparent block">
-                Des solutions sur mesure pour votre sourire
+                Tailored Solutions for Your Smile
               </span>
             </h2>
             <p className="text-xl text-gray-600 blog-content max-w-3xl mx-auto">
-              Nous réunissons prévention, traitements spécialisés et suivi d’excellence pour accompagner chaque étape
-              de votre santé bucco-dentaire.
+              We combine prevention, specialized treatments, and excellent follow-up to support every step
+              of your oral health journey.
             </p>
           </motion.div>
 
@@ -231,7 +233,8 @@ export default function AboutPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="section-spacing bg-white">
+      <section className="section-spacing bg-gradient-to-br from-white to-blue-50/50 relative">
+        <div className="absolute inset-0 gradient-mesh opacity-10" />
         <div className="container mx-auto px-4 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -241,24 +244,24 @@ export default function AboutPage() {
             className="max-w-4xl mx-auto"
           >
             <h2 className="text-5xl font-playfair font-bold text-primary-900 mb-8 blog-heading">
-              Prêt à transformer votre sourire ?
+              Ready to Transform Your Smile?
               <span className="bg-gradient-to-r from-accent-600 to-orange-500 bg-clip-text text-transparent block">
-                La Clinique Dentaire Saada vous accompagne
+                Saada Dental Clinic is Here for You
               </span>
             </h2>
 
             <p className="text-xl text-gray-600 mb-8 blog-content">
-              Contactez notre équipe pour planifier une consultation personnalisée et découvrir comment nous pouvons
-              prendre soin de votre sourire avec excellence.
+              Contact our team to schedule a personalized consultation and discover how we can
+              take care of your smile with excellence.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <Button variant="gold" size="xl" className="text-lg px-12 py-4 shadow-2xl">
-                Prendre rendez-vous
+              <Button variant="gold" size="xl" className="text-lg px-12 py-4 shadow-2xl text-white">
+                Book Appointment
                 <Heart className="w-6 h-6 ml-2" />
               </Button>
-              <Button variant="outline" size="xl" className="text-lg px-12 py-4">
-                Appeler la clinique
+              <Button variant="outline" size="xl" className="text-lg px-12 py-4 text-primary-900 border-primary-300">
+                Call the Clinic
                 <Phone className="w-6 h-6 ml-2" />
               </Button>
             </div>
