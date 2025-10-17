@@ -34,6 +34,7 @@ const navigationLinks = [
       { name: "Orthodontics", href: "/services/orthodontics", description: "Dental alignment and correction" },
     ]
   },
+  { name: "Blog", href: "/blog" },
   { name: "Pricing", href: "/pricing" },
   { name: "Testimonials", href: "/#testimonials" },
   { name: "Contact", href: "/contact" },
