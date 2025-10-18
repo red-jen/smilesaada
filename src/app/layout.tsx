@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
 import NavigationBar from "@/components/sections/NavigationBar";
+import WhatsAppFloatingButton from "@/components/WhatsAppFloatingButton";
 
 const playfairDisplay = Playfair_Display({
   variable: "--font-playfair",
@@ -32,6 +33,7 @@ export default function RootLayout({
       >
         <NavigationBar />
         {children}
+        <WhatsAppFloatingButton phoneNumber="+447445339972" />
       </body>
     </html>
   );

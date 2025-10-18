@@ -74,7 +74,7 @@ export default function CTASection() {
               </a>
               <a 
                 href="https://wa.me/212668418741" 
-                className="flex items-center gap-3 hover:text-teal-600 transition-colors text-lg"
+                className="flex items-center gap-3 hover:text-teal-600 transition-colors text-lg relative z-50"
                 target="_blank"
               >
                 <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">

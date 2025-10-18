@@ -131,3 +131,27 @@ html {
     padding-bottom: 7rem;
   }
 }
+
+/* WhatsApp Widget Styles */
+.whatsapp-widget-container {
+  position: fixed !important;
+  z-index: 2147483647 !important;
+}
+
+/* Ensure the floating button is visible and clickable */
+.whatsapp-widget-container [data-testid="floating-whatsapp-button"] {
+  z-index: 2147483647 !important;
+  pointer-events: auto !important;
+}
+
+/* Ensure the chat window is clickable when open */
+.whatsapp-widget-container [data-testid="floating-whatsapp-chat"] {
+  z-index: 2147483647 !important;
+}
+
+.whatsapp-widget-container input,
+.whatsapp-widget-container textarea,
+.whatsapp-widget-container button {
+  pointer-events: auto !important;
+  z-index: 2147483647 !important;
+}
