@@ -29,11 +29,12 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`${playfairDisplay.variable} ${inter.variable} font-sans antialiased`}
+        className={`${playfairDisplay.variable} ${inter.variable} font-sans antialiased relative`}
       >
+        {/* WhatsApp button positioned at the highest level for proper z-index handling */}
+        <WhatsAppFloatingButton phoneNumber="+447445339972" />
         <NavigationBar />
         {children}
-        <WhatsAppFloatingButton phoneNumber="+447445339972" />
       </body>
     </html>
   );
