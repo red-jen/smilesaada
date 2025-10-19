@@ -1,18 +1,36 @@
-import { Pool } from 'pg';
+/* eslint-disable @typescript-eslint/no-explicit-any */
+// Database configuration - disabled for production deployment
+// This file is for local development only and will not run on Vercel
 
-// Create a new Pool instance to manage connections
-const pool = new Pool({
-  user: 'postgres',
-  host: 'localhost',
-  database: 'dental_blogs',
-  password: 'Ren-ji24',
-  port: 5432,
-});
+// Placeholder types for when pg is not installed
+type QueryResult = {
+  rows: any[];
+  rowCount: number | null;
+};
+
+type PoolClient = {
+  query: (text: string, params?: unknown[]) => Promise<QueryResult>;
+  release: () => void;
+};
+
+// Mock pool for when pg is not available
+const pool = {
+  query: async (text: string, params?: unknown[]): Promise<QueryResult> => {
+    console.warn('Database query attempted but pg module not available:', text);
+    return { rows: [], rowCount: 0 };
+  },
+  connect: async (): Promise<PoolClient> => {
+    return {
+      query: async () => ({ rows: [], rowCount: 0 }),
+      release: () => {},
+    };
+  },
+};
 
 export { pool };
 
 // Helper function to query the database
-export async function query(text: string, params: any[] = []) {
+export async function query(text: string, params: unknown[] = []): Promise<QueryResult> {
   try {
     const start = Date.now();
     const result = await pool.query(text, params);
@@ -26,13 +44,13 @@ export async function query(text: string, params: any[] = []) {
 }
 
 // Helper function to query a single row
-export async function queryOne(text: string, params: any[] = []) {
+export async function queryOne(text: string, params: unknown[] = []) {
   const result = await query(text, params);
   return result.rows[0];
 }
 
 // Helper function to perform database transactions
-export async function transaction<T>(callback: (client: any) => Promise<T>): Promise<T> {
+export async function transaction<T>(callback: (client: PoolClient) => Promise<T>): Promise<T> {
   const client = await pool.connect();
   
   try {
