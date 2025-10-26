@@ -21,23 +21,23 @@ import { useState } from "react"
 const steps = [
   {
     number: "01",
-    title: "Consultation Gratuite",
-    timeline: "SOUS 24H",
-    description: "Un conseiller Clinique Saada dédié vous contacte pour comprendre vos besoins dentaires.",
-    subStep: "SOUS 7 JOURS",
-    subDescription: "Recevez votre plan de traitement personnalisé avec devis détaillé.",
+    title: "Free Consultation",
+    timeline: "WITHIN 24H",
+    description: "A dedicated Saada Clinic advisor contacts you to understand your dental needs.",
+    subStep: "WITHIN 7 DAYS",
+    subDescription: "Receive your personalized treatment plan with detailed quote.",
     icon: MessageCircle,
     color: "from-blue-400 to-blue-600",
     benefits: [
-      "Consultation vidéo gratuite",
-      "Plan de traitement personnalisé",
-      "Plusieurs options de traitement",
-      "Tarification transparente"
+      "Free video consultation",
+      "Personalized treatment plan",
+      "Multiple treatment options",
+      "Transparent pricing"
     ]
   },
   {
     number: "02", 
-    title: "Planification de Voyage",
+    title: "Travel Planning",
     timeline: "CONCIERGE SERVICE",
     description: "We organize your entire journey including transportation, premium accommodation, and all medical appointments.",
     subStep: "VIP SUPPORT",

@@ -8,38 +8,38 @@ const testimonials = [
   {
     name: "Marie Dubois",
     location: "Paris, France",
-    treatment: "Implants Dentaires",
+    treatment: "Dental Implants",
     rating: 5,
     image: "MD",
-    quote: "Une equipe exceptionnelle et des soins de qualite. Dr. Filal a transforme mon sourire avec une expertise remarquable. Je recommande vivement cette clinique !",
-    date: "Il y a 2 mois"
+    quote: "An exceptional team and quality care. Dr. Filal transformed my smile with remarkable expertise. I highly recommend this clinic!",
+    date: "2 months ago"
   },
   {
     name: "Ahmed Benali",
-    location: "Casablanca, Maroc", 
-    treatment: "Couronnes en Zircone",
+    location: "Casablanca, Morocco", 
+    treatment: "Zirconia Crowns",
     rating: 5,
     image: "AB",
-    quote: "Accueil chaleureux et soins professionnels. Les technologies utilisees sont de pointe et le resultat depasse mes attentes. Merci a toute l'equipe !",
-    date: "Il y a 1 mois"
+    quote: "Warm welcome and professional care. The technologies used are cutting-edge and the results exceeded my expectations. Thank you to the entire team!",
+    date: "1 month ago"
   },
   {
     name: "Fatima El Amrani",
-    location: "Rabat, Maroc",
-    treatment: "Facettes Dentaires",
+    location: "Rabat, Morocco",
+    treatment: "Dental Veneers",
     rating: 5,
     image: "FE",
-    quote: "Je suis ravie du resultat ! Un sourire naturel et eclatant. L'equipe est a l'ecoute et tres professionnelle. Une experience parfaite du debut a la fin.",
-    date: "Il y a 3 semaines"
+    quote: "I'm delighted with the results! A natural and radiant smile. The team is attentive and very professional. A perfect experience from start to finish.",
+    date: "3 weeks ago"
   },
   {
     name: "Jean-Pierre Martin",
     location: "Lyon, France",
-    treatment: "Orthodontie Invisible",
+    treatment: "Invisible Orthodontics",
     rating: 5,
     image: "JP",
-    quote: "Un traitement discret et efficace. Le suivi est excellent et les resultats sont visibles rapidement. Je recommande cette clinique les yeux fermes !",
-    date: "Il y a 6 mois"
+    quote: "Discreet and effective treatment. The follow-up is excellent and the results are visible quickly. I recommend this clinic with my eyes closed!",
+    date: "6 months ago"
   }
 ];
 
@@ -56,16 +56,16 @@ export default function TestimonialsSection() {
         >
           <div className="inline-flex items-center gap-2 bg-teal-50 text-teal-700 px-4 py-2 rounded-full mb-6 border border-teal-100">
             <Star className="w-4 h-4" />
-            <span className="text-sm font-semibold">TEMOIGNAGES PATIENTS</span>
+            <span className="text-sm font-semibold">PATIENT TESTIMONIALS</span>
           </div>
           
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            Ce que disent nos patients
+            What Our Patients Say
           </h2>
           
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Decouvrez les experiences de nos patients et leur satisfaction apres leurs soins 
-            a la Clinique Dentaire Saada.
+            Discover the experiences of our patients and their satisfaction after their care
+            at Clinique Dentaire Saada.
           </p>
         </motion.div>
 

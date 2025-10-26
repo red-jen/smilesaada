@@ -26,16 +26,16 @@ export default function CTASection() {
         >
           <div className="inline-flex items-center gap-2 bg-teal-50 text-teal-700 px-4 py-2 rounded-full mb-6 border border-teal-100">
             <Calendar className="w-4 h-4" />
-            <span className="text-sm font-semibold">RESERVEZ VOTRE CONSULTATION</span>
+            <span className="text-sm font-semibold">BOOK YOUR CONSULTATION</span>
           </div>
           
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-            Pret a transformer votre sourire ?
+            Ready to Transform Your Smile?
           </h2>
           
           <p className="text-xl text-gray-600 mb-8 leading-relaxed max-w-3xl mx-auto">
-            Reservez votre consultation gratuite des aujourd'hui et decouvrez comment nous pouvons 
-            prendre soin de votre sourire avec excellence et bienveillance.
+            Book your free consultation today and discover how we can take care of your smile 
+            with excellence and compassion.
           </p>
 
           {/* Primary CTA Buttons */}
@@ -46,7 +46,7 @@ export default function CTASection() {
             >
               <span className="flex items-center gap-2">
                 <Calendar className="w-5 h-5" />
-                Prendre Rendez-vous
+                Book Appointment
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </span>
             </Button>
@@ -55,13 +55,13 @@ export default function CTASection() {
               size="lg"
               className="px-12 py-4 border-2 border-gray-300 text-gray-700 hover:bg-gray-50 rounded-xl text-lg"
             >
-              Appeler la Clinique
+              Call the Clinic
             </Button>
           </div>
 
           {/* Contact Info */}
           <div className="text-gray-600 mb-12">
-            <p className="mb-4 text-lg">Ou contactez-nous directement :</p>
+            <p className="mb-4 text-lg">Or contact us directly:</p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
               <a 
                 href="tel:+212661250137" 

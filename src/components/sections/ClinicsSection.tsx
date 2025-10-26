@@ -29,19 +29,19 @@ export default function ClinicsSection() {
         >
           <div className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 px-4 py-2 rounded-full mb-6 border border-blue-100">
             <MapPin className="w-4 h-4" />
-            <span className="text-sm font-semibold">NOTRE CLINIQUE</span>
+            <span className="text-sm font-semibold">OUR CLINIC</span>
           </div>
           
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
             Clinique Dentaire Saada
             <span className="bg-gradient-to-r from-teal-600 to-blue-600 bg-clip-text text-transparent block mt-2">
-              Votre partenaire sante dentaire
+              Your Dental Health Partner
             </span>
           </h2>
           
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Situee dans un cadre moderne et accueillant, notre clinique vous offre 
-            des soins dentaires d'excellence dans un environnement chaleureux et professionnel.
+            Located in a modern and welcoming setting, our clinic offers you 
+            excellent dental care in a warm and professional environment.
           </p>
         </motion.div>
 
@@ -58,7 +58,7 @@ export default function ClinicsSection() {
             <div className="rounded-3xl overflow-hidden shadow-2xl">
               <img
                 src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=800&q=80"
-                alt="Clinique Dentaire Saada - Equipe souriante"
+                alt="Clinique Dentaire Saada - Smiling Team"
                 className="w-full h-[400px] object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-blue-900/20 to-transparent" />
@@ -72,7 +72,7 @@ export default function ClinicsSection() {
                 </div>
                 <div>
                   <div className="text-2xl font-bold text-gray-900">4.9/5</div>
-                  <div className="text-sm text-gray-600">+200 avis</div>
+                  <div className="text-sm text-gray-600">+200 reviews</div>
                 </div>
               </div>
             </div>
@@ -82,11 +82,11 @@ export default function ClinicsSection() {
           <div className="space-y-8">
             <div>
               <h3 className="text-3xl font-bold text-gray-900 mb-4">
-                Excellence et Innovation
+                Excellence and Innovation
               </h3>
               <p className="text-lg text-gray-600 leading-relaxed mb-6">
-                La Clinique Dentaire Saada allie technologies de pointe et approche humaine 
-                pour vous offrir les meilleurs soins dans un environnement moderne et securise.
+                Clinique Dentaire Saada combines cutting-edge technology and a human approach 
+                to provide you with the best care in a modern and secure environment.
               </p>
             </div>
 
@@ -96,7 +96,7 @@ export default function ClinicsSection() {
                 <div className="w-10 h-10 bg-teal-100 rounded-full flex items-center justify-center">
                   <Shield className="w-5 h-5 text-teal-600" />
                 </div>
-                <span className="text-gray-700 font-medium">Equipements de pointe</span>
+                <span className="text-gray-700 font-medium">Cutting-edge Equipment</span>
               </div>
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
