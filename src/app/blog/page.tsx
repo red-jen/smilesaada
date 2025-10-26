@@ -21,6 +21,114 @@ interface BlogPost {
   published: boolean;
 }
 
+// Sample blog posts
+const SAMPLE_BLOGS: BlogPost[] = [
+  {
+    id: '1',
+    title: 'The Complete Guide to Dental Implants',
+    slug: 'complete-guide-dental-implants',
+    description: 'Learn everything you need to know about dental implants, including the procedure, benefits, costs, and aftercare. Discover why implants are the gold standard for tooth replacement.',
+    category: 'treatments',
+    tags: ['implants', 'tooth-replacement', 'surgery', 'restoration'],
+    images: [
+      'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=800&q=80'
+    ],
+    createdAt: '2025-10-15',
+    published: true
+  },
+  {
+    id: '2',
+    title: 'Natural Teeth Whitening Methods That Work',
+    slug: 'natural-teeth-whitening-methods',
+    description: 'Explore safe and effective ways to brighten your smile at home. From professional whitening treatments to natural remedies, find what works best for your teeth.',
+    category: 'cosmetic-dentistry',
+    tags: ['whitening', 'cosmetic', 'home-care', 'smile'],
+    images: [
+      'https://images.unsplash.com/photo-1609233143971-0674ab38f59e?auto=format&fit=crop&w=800&q=80'
+    ],
+    createdAt: '2025-10-10',
+    published: true
+  },
+  {
+    id: '3',
+    title: '5 Essential Tips for Daily Oral Hygiene',
+    slug: 'essential-tips-daily-oral-hygiene',
+    description: 'Maintain a healthy smile with these expert-recommended daily habits. Learn proper brushing techniques, flossing tips, and more to prevent cavities and gum disease.',
+    category: 'preventive-care',
+    tags: ['oral-health', 'hygiene', 'prevention', 'teeth-care'],
+    images: [
+      'https://images.unsplash.com/photo-1606811841689-23db3d821bda?auto=format&fit=crop&w=800&q=80'
+    ],
+    createdAt: '2025-10-05',
+    published: true
+  },
+  {
+    id: '4',
+    title: 'Understanding Dental Veneers: Transform Your Smile',
+    slug: 'understanding-dental-veneers',
+    description: 'Discover how dental veneers can perfect your smile. Learn about porcelain and composite veneers, the procedure, durability, and expected results.',
+    category: 'cosmetic-dentistry',
+    tags: ['veneers', 'cosmetic', 'smile-design', 'restoration'],
+    images: [
+      'https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?auto=format&fit=crop&w=800&q=80'
+    ],
+    createdAt: '2025-09-28',
+    published: true
+  },
+  {
+    id: '5',
+    title: 'Root Canal Therapy: What to Expect',
+    slug: 'root-canal-therapy-what-to-expect',
+    description: 'Understand the root canal procedure, why it\'s necessary, and what happens during and after treatment. Learn how this procedure saves teeth and alleviates pain.',
+    category: 'treatments',
+    tags: ['root-canal', 'endodontics', 'tooth-pain', 'treatment'],
+    images: [
+      'https://images.unsplash.com/photo-1579318788617-e389a6c3ee41?auto=format&fit=crop&w=800&q=80'
+    ],
+    createdAt: '2025-09-20',
+    published: true
+  },
+  {
+    id: '6',
+    title: 'Importance of Regular Dental Checkups',
+    slug: 'importance-regular-dental-checkups',
+    description: 'Why should you visit your dentist regularly? Learn how preventive dental care can save you money, prevent serious diseases, and keep your smile healthy.',
+    category: 'preventive-care',
+    tags: ['checkups', 'prevention', 'health', 'dentist-visit'],
+    images: [
+      'https://images.unsplash.com/photo-1579154204601-01d430c00853?auto=format&fit=crop&w=800&q=80'
+    ],
+    createdAt: '2025-09-15',
+    published: true
+  },
+  {
+    id: '7',
+    title: 'Orthodontics for Adults: It\'s Never Too Late',
+    slug: 'orthodontics-for-adults',
+    description: 'Explore modern orthodontic options for adults including traditional braces, clear aligners, and invisible braces. Achieve the straight smile you\'ve always wanted.',
+    category: 'treatments',
+    tags: ['orthodontics', 'braces', 'aligners', 'teeth-straightening'],
+    images: [
+      'https://images.unsplash.com/photo-1588776694971-95203cd1ca4f?auto=format&fit=crop&w=800&q=80'
+    ],
+    createdAt: '2025-09-10',
+    published: true
+  },
+  {
+    id: '8',
+    title: 'New Clinic Opening and Service Expansion',
+    slug: 'new-clinic-opening-service-expansion',
+    description: 'Exciting news! Clinique Dentaire Saada is expanding with new facilities and advanced technology. We\'re thrilled to serve more patients with enhanced dental services.',
+    category: 'news',
+    tags: ['news', 'expansion', 'clinic', 'announcement'],
+    images: [
+      'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80'
+    ],
+    createdAt: '2025-09-05',
+    published: true
+  }
+];
+
 export default function BlogPage() {
   const [posts, setPosts] = useState<BlogPost[]>([]);
   const [loading, setLoading] = useState(true);
@@ -49,7 +157,14 @@ export default function BlogPage() {
         setFilteredPosts(publishedPosts);
       } catch (error) {
         console.error('Error parsing saved posts:', error);
+        // Use sample blogs if localStorage fails
+        setPosts(SAMPLE_BLOGS);
+        setFilteredPosts(SAMPLE_BLOGS);
       }
+    } else {
+      // If no saved posts, use sample blogs
+      setPosts(SAMPLE_BLOGS);
+      setFilteredPosts(SAMPLE_BLOGS);
     }
     setLoading(false);
   }, []);
