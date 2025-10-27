@@ -156,6 +156,87 @@ export default function WhiteningPage() {
         </div>
       </section>
 
+      {/* Before & After Gallery */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">Professional Whitening Results</h2>
+              <p className="text-gray-600 max-w-2xl mx-auto">See the dramatic transformation our patients achieve with professional teeth whitening. These real results showcase the power of our Zoom 2 treatment.</p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {[
+                {
+                  title: "Natural White Smile",
+                  description: "Bright, natural looking results",
+                  image: "https://images.unsplash.com/photo-1607613674143-60333f809245?auto=format&fit=crop&w=400&q=80"
+                },
+                {
+                  title: "Hollywood Smile",
+                  description: "Striking bright white teeth",
+                  image: "https://images.unsplash.com/photo-1609711228333-430a63602022?auto=format&fit=crop&w=400&q=80"
+                },
+                {
+                  title: "Radiant White",
+                  description: "Maximum whitening effect",
+                  image: "https://images.unsplash.com/photo-1598188036239-fe6079dd002b?auto=format&fit=crop&w=400&q=80"
+                },
+                {
+                  title: "Confident Smile",
+                  description: "Perfect shade of white",
+                  image: "https://images.unsplash.com/photo-1609033227505-5876f6aa4e90?auto=format&fit=crop&w=400&q=80"
+                },
+                {
+                  title: "Brilliant White",
+                  description: "Professionally whitened teeth",
+                  image: "https://images.unsplash.com/photo-1586348943529-beaae6c28db9?auto=format&fit=crop&w=400&q=80"
+                },
+                {
+                  title: "Perfect White",
+                  description: "Premium whitening results",
+                  image: "https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?auto=format&fit=crop&w=400&q=80"
+                }
+              ].map((result, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="group rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+                >
+                  <div className="relative h-64 overflow-hidden bg-gray-200">
+                    <Image
+                      src={result.image}
+                      alt={result.title}
+                      fill
+                      className="object-cover group-hover:scale-110 transition-transform duration-300"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                      <h3 className="text-white font-semibold text-lg">{result.title}</h3>
+                      <p className="text-white/90 text-sm">{result.description}</p>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+
+            <div className="mt-12 text-center">
+              <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
+                All of our whitening treatments are performed by experienced dental professionals using FDA-approved technology. Results typically last 1-3 years with proper maintenance.
+              </p>
+              <Button size="lg" asChild>
+                <a href="tel:0661250137" className="flex items-center gap-2">
+                  <Phone className="w-5 h-5" />
+                  Schedule Your Whitening Today
+                </a>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Benefits */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
