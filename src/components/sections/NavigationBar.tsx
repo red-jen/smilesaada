@@ -38,6 +38,7 @@ const navigationLinks = [
   { name: "Pricing", href: "/pricing" },
   { name: "Testimonials", href: "/#testimonials" },
   { name: "Contact", href: "/contact" },
+  { name: "Book Now", href: "/booking", isHighlight: true },
 ]
 
 export default function NavigationBar() {
@@ -103,7 +104,11 @@ export default function NavigationBar() {
                 <li key={link.name} className="relative" onMouseEnter={() => handleSubmenuToggle(link.submenu ? index : null)} onMouseLeave={() => handleSubmenuToggle(null)}>
                   <Link
                     href={link.href}
-                    className={`flex items-center gap-1 text-sm font-medium transition-colors ${scrolled ? 'text-white/90 hover:text-amber-300' : (activeSection === link.href.replace('/#','').replace('#','') ? 'text-white' : 'text-white/90 hover:text-amber-300')}`}>
+                    className={`flex items-center gap-1 text-sm font-medium transition-colors ${
+                      'isHighlight' in link && link.isHighlight 
+                        ? 'bg-amber-400 text-gray-900 px-4 py-2 rounded-full hover:bg-amber-300'
+                        : scrolled ? 'text-white/90 hover:text-amber-300' : (activeSection === link.href.replace('/#','').replace('#','') ? 'text-white' : 'text-white/90 hover:text-amber-300')
+                    }`}>
                     {link.name}
                     {link.submenu && (
                       <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${activeSubmenu === index ? 'rotate-180' : ''}`} />

@@ -170,32 +170,32 @@ export default function WhiteningPage() {
                 {
                   title: "Natural White Smile",
                   description: "Bright, natural looking results",
-                  image: "https://images.unsplash.com/photo-1607613674143-60333f809245?auto=format&fit=crop&w=400&q=80"
+                  image: "https://pixabay.com/get/g0673bf18dfdaf6dfb950cc05a100e4f8f999d14197636fb9583b7f1d7d4eea5cb790249ee837ffe2fe82d19ccdea5f66_1920.jpg"
                 },
                 {
                   title: "Hollywood Smile",
                   description: "Striking bright white teeth",
-                  image: "https://images.unsplash.com/photo-1609711228333-430a63602022?auto=format&fit=crop&w=400&q=80"
+                  image: "https://pixabay.com/get/g1f42c20f0bb6d21509db363606016a6160fffdbb4b593d358800722600921237f41042b4ffd7f79759a5e6ba97f3006b_1920.jpg"
                 },
                 {
                   title: "Radiant White",
                   description: "Maximum whitening effect",
-                  image: "https://images.unsplash.com/photo-1598188036239-fe6079dd002b?auto=format&fit=crop&w=400&q=80"
+                  image: "https://pixabay.com/get/g067ae13dfc4c05491bce239a316ccd87b3c7a5d12f74e4fedc0e93f3390667c12a8e25fe43154a98012df599f1ec3395_1920.jpg"
                 },
                 {
                   title: "Confident Smile",
                   description: "Perfect shade of white",
-                  image: "https://images.unsplash.com/photo-1609033227505-5876f6aa4e90?auto=format&fit=crop&w=400&q=80"
+                  image: "https://pixabay.com/get/g067ae13dfc4c05491bce239a316ccd87b3c7a5d12f74e4fedc0e93f3390667c12a8e25fe43154a98012df599f1ec3395_1920.jpg"
                 },
                 {
                   title: "Brilliant White",
                   description: "Professionally whitened teeth",
-                  image: "https://images.unsplash.com/photo-1586348943529-beaae6c28db9?auto=format&fit=crop&w=400&q=80"
+                  image: "https://pixabay.com/get/g067ae13dfc4c05491bce239a316ccd87b3c7a5d12f74e4fedc0e93f3390667c12a8e25fe43154a98012df599f1ec3395_1920.jpg"
                 },
                 {
                   title: "Perfect White",
                   description: "Premium whitening results",
-                  image: "https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?auto=format&fit=crop&w=400&q=80"
+                  image: "https://pixabay.com/get/g067ae13dfc4c05491bce239a316ccd87b3c7a5d12f74e4fedc0e93f3390667c12a8e25fe43154a98012df599f1ec3395_1920.jpg"
                 }
               ].map((result, index) => (
                 <motion.div
